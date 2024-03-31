@@ -1,30 +1,24 @@
 const CardCar = (props) => {
-    const {
-        name,
-        price,
-        category,
-        imageUrl,
-        onButtonClick,
-        className
-    } = props;
+  const {
+    name,
+    price,
+    category,git 
+    imageUrl
+  } = props;
 
-    return (
-        <div
-            className={`w-50 p-2 d-flex flex-column card ${className}`}
-        >
-            <img
-                src={imageUrl}
-                className="w-25"
-                alt="car-image"
-            />
-            <span>Name: {name}</span>
-            <span>Price: {price}</span>
-            <span>Category: {category}</span>
-            <button className="btn btn-success" onClick={onButtonClick}>
-                Pilih Mobil
-            </button>
-        </div>
-    )
-};
+  return(
+    <div className="d-flex flex-column card"
+    
+    >
+      
+      <span>{name}</span>
+      <span>{price}</span>
+      <span>{category}</span>
+      <span>{imageUrl}</span>
+      <button className="btn btn-success">Pilih mobil aja</button>
+
+    </div>
+  )
+}
 
 export default CardCar;

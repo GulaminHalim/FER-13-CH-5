@@ -1,34 +1,24 @@
 const BannerCar = (props) => {
-    const {
-        isButtonShown,
-        isDanger,
-        clickCount,
-        onButtonClick
-    } = props;
+  const{
+    children,
+    isDanger,
+    clickCount
+  } = props;
 
-    return (
-        <div>
-            <span
-                className={isDanger
-                    ? 'text-danger'
-                    : 'text-info'}
-            >
-                TAMPILAN MOBIL {clickCount}
-            </span>
-            {
-                isButtonShown
-                    ? (
-                        <button
-                            className="btn btn-danger"
-                            onClick={onButtonClick}
-                        >
-                            Cari Mobil
-                        </button>
-                    )
-                    : (<></>)
-            }
-        </div>
-    )
+  return(
+    <div>
+      <span
+        className={isDanger
+          ? 'text-danger'
+          : 'text-info'}
+      >
+        TAMPILAN MOBIL{clickCount}
+      </span>
+          {children}
+    </div>
+
+  )
+
 };
 
 export default BannerCar;

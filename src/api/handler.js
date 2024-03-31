@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const handler = axios.create({
     baseURL: `${process.env.REACT_APP_BASE_API_URL}`,
@@ -6,11 +6,10 @@ const handler = axios.create({
 })
 
 handler.interceptors.request.use((request) => {
-    if (request.url !== '/admin/auth/login') {
+    if(request.url !== '/admin/auth/login'){
         request.headers['access_token'] = `${localStorage.getItem('token')}`;
     }
-
     return request;
-});
+})
 
-export { handler };
+export {handler};
